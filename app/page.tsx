@@ -51,25 +51,38 @@ export default function Home() {
   const handleScroll = useCallback(() => {
     if (mainRef.current) {
       const { scrollTop } = mainRef.current
-      if (scrollTop > 0 && !isHeaderPassed) {
+      const scrollThreshold = 50 // Scroll at least 50px before triggering
+  
+      if (scrollTop > scrollThreshold && !isHeaderPassed) {
         setIsHeaderPassed(true)
         setShouldPlayAudio(true)
         mainRef.current.style.overflowY = "hidden"
       }
     }
   }, [isHeaderPassed])
-
+  
   useEffect(() => {
+    let debounceTimer: NodeJS.Timeout
     const mainElement = mainRef.current
+  
+    const debouncedHandleScroll = () => {
+      clearTimeout(debounceTimer)
+      debounceTimer = setTimeout(() => {
+        handleScroll()
+      }, 100) // Adjust debounce timing as needed
+    }
+  
     if (mainElement) {
-      mainElement.addEventListener("scroll", handleScroll)
+      mainElement.addEventListener("scroll", debouncedHandleScroll)
     }
     return () => {
       if (mainElement) {
-        mainElement.removeEventListener("scroll", handleScroll)
+        mainElement.removeEventListener("scroll", debouncedHandleScroll)
       }
+      clearTimeout(debounceTimer)
     }
   }, [handleScroll])
+  
 
   return (
     <main ref={mainRef} className="h-screen overflow-y-scroll snap-y snap-mandatory scrollbar-hide">
