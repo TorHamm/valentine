@@ -9,13 +9,13 @@ import AudioPlayer from "./components/AudioPlayer"
 
 const imageSections = [
   { imageSrc: "first-date.jpg", text: "เดทแรก" },
-  { imageSrc: "First-Selfie.jpg", text: "เซลฟี่แรกของเรา" },
+  { imageSrc: "first-selfie.jpg", text: "เซลฟี่แรกของเรา" },
   { imageSrc: "first-kiss.jpg", text: "จุ๊บๆ ครั้งแรก" },
-  { imageSrc: "first-gift.jpg", text: "ของขวัญชิ้นแรก" },
-  { imageSrc: "first-doll.jpg", text: "ตุ๊กตาตัวแรก" },
-  { imageSrc: "first-flower.jpg", text: "ดอกไม้ช่อแรก" },
+  { imageSrc: "First-Gift.jpg", text: "ของขวัญชิ้นแรก" },
+  { imageSrc: "First-Doll.jpg", text: "ตุ๊กตาตัวแรก" },
+  { imageSrc: "First-Flower.jpg", text: "ดอกไม้ช่อแรก" },
   { imageSrc: "Vid-1.jpg", text: "ตอนคอลกัน" },
-  { imageSrc: "Vid-3.jpg", text: "ตอนคอลกันอีกละ" },
+  { imageSrc: "vid-3.jpg", text: "ตอนคอลกันอีกละ" },
   { imageSrc: "Vid-2.jpg", text: "ตอนคอลกันอีกแล้ว!" },
   { imageSrc: "School-Trip.jpg", text: "วันทัศนศึกษา" },
   { imageSrc: "Sport-day.jpg", text: "วันกีฬาสี" },
